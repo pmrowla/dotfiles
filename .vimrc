@@ -1,5 +1,7 @@
 set nocompatible
 
+call pathogen#infect()
+
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
@@ -29,10 +31,6 @@ set sw=4
 set smarttab
 
 set autoindent
-" C indenting
-set cinwords=if,else,while,do,for,switch
-set cindent
-set cinoptions=>s,e0,n0,f0,{0,}0,^0,:0,=s,ps,t0,c3,+s,(2s,us,)20,*30,gs,hs
 
 let python_highlight_all=1
 
