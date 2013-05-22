@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -98,3 +103,15 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# if we have virtualenvwrapper then enable it
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# if we have rbenv then enable it
+if [ -d "$HOME/.rbenv" ]; then
+    PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
