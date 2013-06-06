@@ -71,6 +71,7 @@ set shiftwidth=4
 
 " Plugin Settings {{{2
 
+let g:flake8_builtins="_,apply"
 let g:netrw_list_hide = '^\.,^tags$,.*\.pyc$'
 let g:python_highlight_all=1    " best settings for python.vim
 
@@ -110,9 +111,11 @@ if has("autocmd") && !exists("autocmds_loaded")
     " assume c/c++ always uses doxygen
     autocmd FileType c let b:comment = '\/\/'
     autocmd FileType c set ft=c.doxygen
-    autocmd FileType h set ft=c.doxygen
+    autocmd FileType cpp set ft=cpp.doxygen
+    autocmd FileType h set ft=cpp.doxygen
     " autocmd FileType svn-base set ft=svnbase
     au BufNewFile,BufRead *.dxy setf doxygen
+    autocmd BufWritePost *.py call Flake8()
 endif
 
 " Section: Commands {{{1
