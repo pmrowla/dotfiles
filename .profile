@@ -11,23 +11,4 @@
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     . "$HOME/.bashrc"
-
-    # if we have virtualenvwrapper then enable it
-    if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
-        . /usr/local/bin/virtualenvwrapper.sh
-    fi
 fi
-<<<<<<< Updated upstream
-=======
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# if we have rbenv then enable it
-if [ -d "$HOME/.rbenv" ]; then
-    PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
->>>>>>> Stashed changes
