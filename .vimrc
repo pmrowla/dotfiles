@@ -3,6 +3,9 @@
 
 set nocompatible    " be iMproved
 
+" set this before loading bundles so solarized works properly
+set bg=dark
+
 " vundle stuff goes in its own file
 " See the vundle FAQ for explanation of why
 source ~/.vim/bundles.vim
@@ -16,8 +19,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Colorscheme
-set bg=dark
-colorscheme torte
+colorscheme solarized
 
 " Section: Options {{{1
 " ---------------------
