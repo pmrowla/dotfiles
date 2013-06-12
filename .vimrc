@@ -27,10 +27,15 @@ colorscheme solarized
 set autoindent
 set autowrite       " auto save before commands like :next
 set backspace=indent,eol,start  " make backspace work properly
-set backupdir=/tmp,/var/tmp,~/tmp   " put backup files somewhere else
+if has('win32') || has('win64')
+    set backupdir=~/AppData/Local/Temp  " put backup files somewhere else
+    set directory=~/AppData/Local/Temp  " directory for swap files
+else
+    set backupdir=/tmp,/var/tmp,~/tmp   " put backup files somewhere else
+    set directory=/tmp,/var/tmp,~/tmp   " directory for swap files
+endif
 set cmdheight=2
 set complete-=i     " don't search includes
-set directory=/tmp,/var/tmp,~/tmp   " directory for swap files
 set display=lastline
 
 if &encoding ==# 'latin1' && has('gui_running')
@@ -170,6 +175,23 @@ map <Leader>rt :tabnew <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>rv :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>rs :sp <C-R>=expand("%:p:h") . "/" <CR>
 
+" }}}1
+"
+" Section: Visual {{{1
+" --------------------
+if (&t_Co > 2 || has("gui_running")) && has("syntax")
+    if exists("&guifont")
+        if has("mac")
+            set guifont=Monaco:h9
+        elseif has("unix")
+            if &guifont == ""
+                set guifont=bitstream\ vera\ sans\ mono\ 10
+            endif
+        elseif has("win32") || has("win64")
+            set guifont=Consolas:h9,Courier\ New:h9
+        endif
+    endif
+endif
 " }}}1
 
 if filereadable(expand("~/.vimrc.local"))
