@@ -2,6 +2,13 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# tmux doesn't work properly unless you force TERM to be xterm-256color
+# Also, if you are in PuTTY make sure you force putty to use putty-256color
+# or xterm-256color as it's terminal
+case "$TERM" in
+    *-256color) export TERM=xterm-256color;;
+esac
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
