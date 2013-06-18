@@ -84,11 +84,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
+
+# always use colored grep if we can
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -109,6 +110,18 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+fi
+
+# if boxen exists use it
+if [ -f /opt/boxen/env.sh ]; then
+    . /opt/boxen/env.sh
+
+    # mac specific dircolors crap
+    if [ -x /opt/boxen/homebrew/bin/gdircolors ]; then
+        test -r ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+        alias ls='gls --color=auto'
+    fi
+
 fi
 
 # if we have virtualenvwrapper then enable it

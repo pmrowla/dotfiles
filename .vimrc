@@ -182,7 +182,7 @@ map <Leader>rs :sp <C-R>=expand("%:p:h") . "/" <CR>
 if (&t_Co > 2 || has("gui_running")) && has("syntax")
     if exists("&guifont")
         if has("mac")
-            set guifont=Monaco:h9
+            set guifont=Menlo:h11
         elseif has("unix")
             if &guifont == ""
                 set guifont=bitstream\ vera\ sans\ mono\ 10
