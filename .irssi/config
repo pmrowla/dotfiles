@@ -210,3 +210,4 @@ mainwindows = {
   7 = { first_line = "7"; lines = "66"; };
   5 = { first_line = "1"; lines = "6"; };
 };
+ignores = ( { level = "ALL"; channels = ( "&fb", "&aim", "&gtalk" ); } );

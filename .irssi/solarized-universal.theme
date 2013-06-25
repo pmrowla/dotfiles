@@ -160,8 +160,6 @@ abstracts = {
   # public message in channel, $0 = nick mode, $1 = nick
   pubmsgnick = "{msgnick $0 $1-}";
   #pubnick = "%N%_$*%_%n";
-  # NOTE: different than the standard solarized theme
-  # so that it works properly with nickcolor.pl
   pubnick = "%N$*%n";
 
   # public message in channel meant for me, $0 = nick mode, $1 = nick
@@ -371,6 +369,6 @@ abstracts = {
 formats = {
   "fe-common/core" = {
     daychange = "           %g-----%w-%W-%n Day changed to %%D %W-%w-%g-----%n";
-    pubmsg = "{pubmsgnick $2 {pubnick \00307$0}}$1";
+    pubmsg = "{pubmsgnick $2 {pubnick \00306$0}}$1";
   };
 };

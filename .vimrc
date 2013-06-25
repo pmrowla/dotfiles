@@ -39,7 +39,7 @@ set complete-=i     " don't search includes
 set display=lastline
 
 if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
+    set encoding=utf-8
 endif
 
 set fileformats=unix,dos,mac
@@ -143,13 +143,13 @@ endif
 
 if has("eval")
 
-function! SL(function)
-    if exists('*'.a:function)
-        return call(a:function,[])
-    else
-        return ''
-    endif
-endfunction
+    function! SL(function)
+        if exists('*'.a:function)
+            return call(a:function,[])
+        else
+            return ''
+        endif
+    endfunction
 
 endif   " has("eval")
 

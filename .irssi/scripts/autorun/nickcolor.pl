@@ -85,7 +85,7 @@ sub simple_hash {
     $counter += ord $char;
   }
 
-  $counter = $colors[$counter % 8];
+  $counter = $colors[$counter % 7];
 
   return $counter;
 }
