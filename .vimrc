@@ -92,6 +92,17 @@ let g:NERDTreeHijackNetrw = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
 
+let g:ctrlp_use_caching = 1
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+if has("autocmd")
+    " solarized dark colors for vim-indent-guides
+    let g:indent_guides_auto_colors = 0
+    au VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=8 guibg=darkgray
+    au VimEnter,ColorScheme * :hi IndentGuidesEven  ctermbg=0 guibg=black
+endif
+
 function! s:try(cmd, default)
     if exists(':' . a:cmd) && !v:count
         let tick = b:changedtick
@@ -129,7 +140,7 @@ if has("autocmd") && !exists("autocmds_loaded")
 
     " only use relative numebering in the current buffer
     au BufEnter * setlocal relativenumber
-    au BufLeave * setlocal norelativenumber
+    au BufLeave * setlocal number
     " absolute numbers in insert mode
     "au InsertEnter * set number
     "au InsertLeave * set relativenumber
