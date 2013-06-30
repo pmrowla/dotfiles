@@ -84,18 +84,12 @@ let g:python_highlight_all=1    " best settings for python.vim
 
 let g:ctrlp_user_command = {
     \ 'types': {
-    \   1: ['.git/', 'git --git-dir=%/.git ls-files -oc --exclude-standard'],
+    \   1: ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'],
     \ },
 \ }
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
 
 let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
-let g:NERDCreateDefaultMappings = 0
-let g:NERDSpaceDelims = 1
-let g:NERDShutUp = 1
-let g:NERDTreeHijackNetrw = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
 
