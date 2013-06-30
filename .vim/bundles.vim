@@ -11,6 +11,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " github bundles
+Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'kana/vim-textobj-user'
