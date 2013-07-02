@@ -125,7 +125,8 @@ if [ -f /opt/boxen/env.sh ]; then
 fi
 
 # if we have virtualenvwrapper then enable it
-if [ -n `which virtualenvwrapper.sh` ]; then
+which virtualenvwrapper.sh &> /dev/null
+if [ $? -eq 0 ]; then
     . `which virtualenvwrapper.sh`
 fi
 
