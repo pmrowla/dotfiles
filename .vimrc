@@ -82,14 +82,17 @@ let g:flake8_builtins="_,apply"
 let g:netrw_list_hide = '^\.,^tags$,.*\.pyc$'
 let g:python_highlight_all=1    " best settings for python.vim
 
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = {
+    \ 'types': {
+    \   1: ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'],
+    \ },
+\ }
+
 let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
-
-let g:ctrlp_use_caching = 1
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
