@@ -135,3 +135,8 @@ if [ -d "$HOME/.rbenv" ]; then
     PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
+
+# if we have heroku then enable it
+if [-d "/usr/local/heroku" ]; then
+    export PATH="/usr/local/heroku/bin:$PATH"
+fi
