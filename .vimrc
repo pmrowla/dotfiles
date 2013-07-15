@@ -99,8 +99,8 @@ let g:indent_guides_start_level = 2
 if has("autocmd")
     " solarized dark colors for vim-indent-guides
     let g:indent_guides_auto_colors = 0
-    au VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=8 guibg=darkgray
-    au VimEnter,ColorScheme * :hi IndentGuidesEven  ctermbg=0 guibg=black
+    au VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=8 guibg=#002b36
+    au VimEnter,ColorScheme * :hi IndentGuidesEven  ctermbg=0 guibg=#073642
 endif
 
 function! s:try(cmd, default)
