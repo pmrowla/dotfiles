@@ -137,6 +137,6 @@ if [ -d "$HOME/.rbenv" ]; then
 fi
 
 # if we have heroku then enable it
-if [-d "/usr/local/heroku" ]; then
+if [ -d "/usr/local/heroku" ]; then
     export PATH="/usr/local/heroku/bin:$PATH"
 fi

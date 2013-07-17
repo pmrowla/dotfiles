@@ -91,7 +91,7 @@ settings = {
     awl_display_key = "$Q%K|$N $H$C$S%n";
     awl_display_key_active = "$Q%K|$N $H%U$C$S%n";
     awl_display_nokey = "[$N]$H$C$S";
-    nicklist_height = "20";
+    nicklist_height = "50";
     nicklist_width = "20";
     trackbar_style = "%B";
   };

@@ -20,7 +20,7 @@
 [core]
     excludesfile = ~/.gitignore_global
 [github]
-	user = tpope
+	user = pmrowla
 [init]
 	templatedir = ~/.git_template
 [interactive]
