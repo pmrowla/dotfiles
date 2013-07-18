@@ -1,3 +1,4 @@
-.vim/bundle/
-.vim/.netrwhist
-.irssi/away.log
+home/.byobu/
+home/.irssi/away.log
+home/.vim/bundle/
+home/.vim/.netrwhist
