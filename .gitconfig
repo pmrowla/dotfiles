@@ -18,6 +18,7 @@
 	interactive = auto
 	grep = auto
 [core]
+    editor = vim
     excludesfile = ~/.gitignore_global
 [github]
 	user = pmrowla
