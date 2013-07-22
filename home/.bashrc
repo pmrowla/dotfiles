@@ -141,10 +141,6 @@ if [ -d "/usr/local/heroku" ]; then
     export PATH="/usr/local/heroku/bin:$PATH"
 fi
 
-# check if we are at work
-hostname -f | grep -q oraclecorp.com$
-if [ $? -eq 0 ]; then
-    export http_proxy=http://rmdc-proxy.oracle.com:80
-    export https_proxy=$http_proxy
-    export ftp_proxy=$ftp_proxy
+if [ -f $HOME/.bashrc.local ]; then
+    . $HOME/.bashrc.local
 fi
