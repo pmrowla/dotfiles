@@ -131,7 +131,9 @@ if has("autocmd") && !exists("autocmds_loaded")
     autocmd FileType c set ft=c.doxygen
     autocmd FileType cpp set ft=cpp.doxygen
     autocmd FileType h set ft=cpp.doxygen
-    au BufNewFile,BufRead *.dxy setf doxygen
+    autocmd BufNewFile,BufRead *.dxy setf doxygen
+    autocmd BufNewFile,BufRead *.sls setf yaml
+    autocmd FileType yaml set ts=2 sts=2 sw=2
 
     " run flake8 on writes to a Python file
     autocmd BufWritePost *.py call Flake8()
@@ -139,14 +141,14 @@ if has("autocmd") && !exists("autocmds_loaded")
     "autocmd FileType svn-base set ft=svnbase
 
     " only use relative numebering in the current buffer
-    au BufEnter * setlocal relativenumber
-    au BufLeave * setlocal number
+    autocmd BufEnter * setlocal relativenumber
+    autocmd BufLeave * setlocal number
     " absolute numbers in insert mode
     "au InsertEnter * set number
     "au InsertLeave * set relativenumber
 
     " use wrap + linebreak for text based document types
-    au FileType latex,markdown set tw=0 wrap lbr
+    autocmd FileType latex,markdown set tw=0 wrap lbr
 endif
 
 " Section: Commands {{{1
