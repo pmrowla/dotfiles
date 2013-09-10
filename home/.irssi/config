@@ -1,0 +1,214 @@
+servers = (
+  {
+    address = "irc.linuxniche.net";
+    chatnet = "linuxniche";
+    port = "6697";
+    autoconnect = "yes";
+    use_ssl = "yes";
+  },
+
+  {
+    address = "irc.us.synirc.net";
+    chatnet = "synirc";
+    port = "7001";
+    autoconnect = "yes";
+    use_ssl = "yes";
+  },
+
+  { address = "localhost"; chatnet = "bitlbee"; autoconnect = "yes"; },
+
+  {
+    address = "irc.us.gamesurge.net";
+    chatnet = "gamesurge";
+    port = "6667";
+    autoconnect = "yes";
+    use_ssl = "no";
+  },
+
+  {
+    address = "chat.freenode.net";
+    chatnet = "freenode";
+    port = "6697";
+    autoconnect = "yes";
+    use_ssl = "yes";
+  }
+);
+
+chatnets = {
+  synirc = {
+    type = "IRC";
+    nick = "astroman";
+    realname = "SA astr0man";
+  };
+
+  linuxniche = {
+    type = "IRC";
+    nick = "pmrowla";
+    realname = "pmrowla";
+  };
+
+  bitlbee = {
+    type = "IRC";
+  };
+
+  gamesurge = { type = "IRC"; nick = "astroman"; };
+  freenode = {
+    type = "IRC";
+    nick = "pmrowla";
+    realname = "Peter Rowlands";
+  };
+};
+
+channels = (
+  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
+  { name = "#nhl"; chatnet = "synirc"; autojoin = "No"; },
+  { name = "#csgo"; chatnet = "synirc"; autojoin = "Yes"; },
+  { name = "#goonpug"; chatnet = "synirc"; autojoin = "Yes"; },
+  { name = "#nintengoons"; chatnet = "synirc"; autojoin = "Yes"; },
+  { name = "#jenkem"; chatnet = "linuxniche"; autojoin = "Yes"; },
+  { name = "#goonzb"; chatnet = "synirc"; autojoin = "yes"; }
+);
+settings = {
+  core = {
+    real_name = "Peter Rowlands";
+    user_name = "peter";
+    nick = "peter";
+    timestamp_format = "%H:%M:%S";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = {
+    theme = "solarized-universal";
+    hilight_color = "= %R";
+    autolog_path = "~/.irclogs/%Y/$tag/$0.%Y-%m-%d.log";
+    autolog = "yes";
+    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
+    bell_beeps = "yes";
+  };
+  "perl/core/scripts" = {
+    awl_block = "-14";
+    awl_display_key = "$Q%K|$N $H$C$S%n";
+    awl_display_key_active = "$Q%K|$N $H%U$C$S%n";
+    awl_display_nokey = "[$N]$H$C$S";
+    nicklist_height = "50";
+    nicklist_width = "20";
+    trackbar_style = "%B";
+  };
+};
+
+hilights = (
+  { text = "peter"; nick = "yes"; word = "yes"; fullword = "yes"; },
+  { text = "astro"; nick = "yes"; word = "yes"; fullword = "yes"; }
+);
+
+statusbar = {
+  default = {
+    window = {
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        act = { priority = "-1"; };
+        barend = { priority = "100"; alignment = "right"; };
+        vim_mode = { };
+        vim_windows = { };
+      };
+    };
+    prompt = {
+      items = {
+        uberprompt = { priority = "-1"; };
+        input = { priority = "10"; };
+      };
+      position = "100";
+    };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+logs = { };
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#csgo";
+        tag = "synirc";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#nintengoons";
+        tag = "synirc";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#jenkem";
+        tag = "linuxniche";
+      }
+    );
+  };
+  5 = { name = "hilight"; sticky = "yes"; };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&bitlbee";
+        tag = "bitlbee";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#goonpug";
+        tag = "synirc";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#goonzb";
+        tag = "synirc";
+      }
+    );
+  };
+};
+mainwindows = {
+  7 = { first_line = "7"; lines = "66"; };
+  5 = { first_line = "1"; lines = "6"; };
+};
+ignores = (
+  { level = "ALL"; channels = ( "&fb", "&aim", "&gtalk" ); },
+  { level = "JOINS PARTS"; channels = ( "#csgo" ); }
+);
