@@ -64,6 +64,7 @@ set smarttab
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 set textwidth=79    " anything bigger than this is annoying - see also: pep8
 set undodir=/tmp,/var/tmp,~/tmp     " directory for undo tree files
+set undofile
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.pyc
 
 if has("mouse")
@@ -133,7 +134,8 @@ if has("autocmd") && !exists("autocmds_loaded")
     autocmd FileType h set ft=cpp.doxygen
     autocmd BufNewFile,BufRead *.dxy setf doxygen
     autocmd BufNewFile,BufRead *.sls setf yaml
-    autocmd FileType yaml set ts=2 sts=2 sw=2
+    autocmd FileType yaml,json set ts=2 sts=2 sw=2
+    autocmd FileType html,django,htmldjango,jinja,htmljinja set ts=2 sts=2 sw=2 tw=0 wrap lbr
 
     " run flake8 on writes to a Python file
     autocmd BufWritePost *.py call Flake8()
