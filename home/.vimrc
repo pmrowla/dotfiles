@@ -65,7 +65,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitiv
 set textwidth=79    " anything bigger than this is annoying - see also: pep8
 set undodir=/tmp,/var/tmp,~/tmp     " directory for undo tree files
 set undofile
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.pyc
+set wildignore+=*.pyc
 
 if has("mouse")
     set mouse=a
@@ -143,7 +143,7 @@ if has("autocmd") && !exists("autocmds_loaded")
     "autocmd FileType svn-base set ft=svnbase
 
     " only use relative numebering in the current buffer
-    autocmd BufEnter * setlocal relativenumber
+    autocmd BufEnter * setlocal relativenumber number
     autocmd BufLeave * setlocal number
     " absolute numbers in insert mode
     "au InsertEnter * set number
