@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
 " github bundles
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'davidhalter/jedi-vim'
+Bundle 'jalcine/cmake.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
@@ -36,6 +36,7 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'withgod/vim-sourcepawn'
 
 " vim-scripts bundles
