@@ -26,8 +26,16 @@ servers = (
   },
 
   {
-    address = "chat.freenode.net";
+    address = "morgan.freenode.net";
     chatnet = "freenode";
+    port = "6697";
+    autoconnect = "yes";
+    use_ssl = "yes";
+  },
+
+  {
+    address = "irc.snoonet.org";
+    chatnet = "snoonet";
     port = "6697";
     autoconnect = "yes";
     use_ssl = "yes";
@@ -41,38 +49,49 @@ chatnets = {
     realname = "SA astr0man";
   };
 
-  linuxniche = {
-    type = "IRC";
-    nick = "pmrowla";
-    realname = "pmrowla";
-  };
+  linuxniche = { type = "IRC"; nick = "pmrowla"; realname = "pmrowla"; };
 
   bitlbee = {
     type = "IRC";
+    nick = "peter";
   };
 
   gamesurge = { type = "IRC"; nick = "astroman"; };
+
   freenode = {
     type = "IRC";
     nick = "pmrowla";
     realname = "Peter Rowlands";
   };
+
+  snoonet = {
+    type = "IRC";
+    nick = "pmrowla";
+    realname = "reddit: pmrowla sa: astr0man";
+  };
 };
 
 channels = (
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "#nhl"; chatnet = "synirc"; autojoin = "No"; },
   { name = "#csgo"; chatnet = "synirc"; autojoin = "Yes"; },
   { name = "#goonpug"; chatnet = "synirc"; autojoin = "Yes"; },
+  { name = "#nhl"; chatnet = "synirc"; autojoin = "Yes"; },
   { name = "#nintengoons"; chatnet = "synirc"; autojoin = "Yes"; },
-  { name = "#jenkem"; chatnet = "linuxniche"; autojoin = "Yes"; },
-  { name = "#goonzb"; chatnet = "synirc"; autojoin = "yes"; }
+  { name = "#cobol"; chatnet = "synirc"; autojoin = "yes"; },
+  { name = "#salt"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#ubuntu"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "##c"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#python"; chatnet = "freenode"; autojoin = "no"; },
+  { name = "#metamod"; chatnet = "gamesurge"; autojoin = "no"; },
+  { name = "#sourcemod"; chatnet = "gamesurge"; autojoin = "no"; },
+  { name = "#pokegoons"; chatnet = "synirc"; autojoin = "yes"; },
+  { name = "#jenkem"; chatnet = "linuxniche"; autojoin = "yes"; }
 );
+
 settings = {
   core = {
-    real_name = "Peter Rowlands";
-    user_name = "peter";
-    nick = "peter";
+    real_name = "pmrowla";
+    user_name = "pmrowla";
+    nick = "pmrowla";
     timestamp_format = "%H:%M:%S";
   };
   "fe-text" = { actlist_sort = "refnum"; };
@@ -83,21 +102,24 @@ settings = {
     autolog = "yes";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     bell_beeps = "yes";
+    activity_hide_targets = "= &bitlbee &gtalk &fb &aim";
+    activity_hide_level = "QUITS JOINS PARTS KICKS MODES TOPIC NICKS";
   };
   "perl/core/scripts" = {
     awl_block = "-14";
     awl_display_key = "$Q%K|$N $H$C$S%n";
     awl_display_key_active = "$Q%K|$N $H%U$C$S%n";
     awl_display_nokey = "[$N]$H$C$S";
-    nicklist_height = "50";
-    nicklist_width = "20";
+    nicklist_height = "60";
+    nicklist_width = "23";
     trackbar_style = "%B";
   };
 };
 
 hilights = (
-  { text = "peter"; nick = "yes"; word = "yes"; fullword = "yes"; },
-  { text = "astro"; nick = "yes"; word = "yes"; fullword = "yes"; }
+  { text = "astro"; nick = "yes"; word = "yes"; fullword = "yes"; },
+  { text = "pmrowla"; nick = "yes"; word = "yes"; fullword = "yes"; },
+  { text = "astroman"; nick = "yes"; word = "yes"; fullword = "yes"; }
 );
 
 statusbar = {
@@ -139,20 +161,105 @@ statusbar = {
     };
   };
 };
+
 logs = { };
+
+ignores = (
+  { mask = "buttebot"; level = "ALL"; },
+  { mask = "pipeline"; level = "ALL"; },
+  { mask = "weedbot"; level = "ALL"; }
+);
+
+keyboard = (
+  { key = "meta-1"; id = "change_window"; data = "1"; },
+  { key = "meta-2"; id = "change_window"; data = "2"; },
+  { key = "meta-3"; id = "change_window"; data = "3"; },
+  { key = "meta-4"; id = "change_window"; data = "4"; },
+  { key = "meta-5"; id = "change_window"; data = "5"; },
+  { key = "meta-6"; id = "change_window"; data = "6"; },
+  { key = "meta-7"; id = "change_window"; data = "7"; },
+  { key = "meta-8"; id = "change_window"; data = "8"; },
+  { key = "meta-9"; id = "change_window"; data = "9"; },
+  { key = "meta-0"; id = "change_window"; data = "10"; },
+  { key = "meta-q"; id = "change_window"; data = "11"; },
+  { key = "meta-w"; id = "change_window"; data = "12"; },
+  { key = "meta-e"; id = "change_window"; data = "13"; },
+  { key = "meta-r"; id = "change_window"; data = "14"; },
+  { key = "meta-t"; id = "change_window"; data = "15"; },
+  { key = "meta-y"; id = "change_window"; data = "16"; },
+  { key = "meta-u"; id = "change_window"; data = "17"; },
+  { key = "meta-i"; id = "change_window"; data = "18"; },
+  { key = "meta-o"; id = "change_window"; data = "19"; },
+  { key = "meta-p"; id = "change_window"; data = "20"; },
+  { key = "meta-a"; id = "change_window"; data = "21"; },
+  { key = "meta-s"; id = "change_window"; data = "22"; },
+  { key = "meta-d"; id = "change_window"; data = "23"; },
+  { key = "meta-f"; id = "change_window"; data = "24"; },
+  { key = "meta-g"; id = "change_window"; data = "25"; },
+  { key = "meta-h"; id = "change_window"; data = "26"; },
+  { key = "meta-j"; id = "change_window"; data = "27"; },
+  { key = "meta-k"; id = "change_window"; data = "28"; },
+  { key = "meta-l"; id = "change_window"; data = "29"; },
+  { key = "meta-\\;"; id = "change_window"; data = "30"; },
+  { key = "meta-z"; id = "change_window"; data = "31"; },
+  { key = "meta-x"; id = "change_window"; data = "32"; },
+  { key = "meta-c"; id = "change_window"; data = "33"; },
+  { key = "meta-v"; id = "change_window"; data = "34"; },
+  { key = "meta-b"; id = "change_window"; data = "35"; },
+  { key = "meta-n"; id = "change_window"; data = "36"; },
+  { key = "meta-m"; id = "change_window"; data = "37"; },
+  { key = "meta-,"; id = "change_window"; data = "38"; },
+  { key = "meta-."; id = "change_window"; data = "39"; },
+  { key = "meta-/"; id = "change_window"; data = "40"; },
+  { key = "meta-!"; id = "change_window"; data = "41"; },
+  { key = "meta-@"; id = "change_window"; data = "42"; },
+  { key = "meta-#"; id = "change_window"; data = "43"; },
+  { key = "meta-\\$"; id = "change_window"; data = "44"; },
+  { key = "meta-%"; id = "change_window"; data = "45"; },
+  { key = "meta-^"; id = "change_window"; data = "46"; },
+  { key = "meta-&"; id = "change_window"; data = "47"; },
+  { key = "meta-*"; id = "change_window"; data = "48"; },
+  { key = "meta-("; id = "change_window"; data = "49"; },
+  { key = "meta-)"; id = "change_window"; data = "50"; },
+  { key = "meta-Q"; id = "change_window"; data = "51"; },
+  { key = "meta-W"; id = "change_window"; data = "52"; },
+  { key = "meta-E"; id = "change_window"; data = "53"; },
+  { key = "meta-R"; id = "change_window"; data = "54"; },
+  { key = "meta-T"; id = "change_window"; data = "55"; },
+  { key = "meta-Y"; id = "change_window"; data = "56"; },
+  { key = "meta-U"; id = "change_window"; data = "57"; },
+  { key = "meta-I"; id = "change_window"; data = "58"; },
+  { key = "meta-O"; id = "change_window"; data = "59"; },
+  { key = "meta-P"; id = "change_window"; data = "60"; },
+  { key = "meta-A"; id = "change_window"; data = "61"; },
+  { key = "meta-S"; id = "change_window"; data = "62"; },
+  { key = "meta-D"; id = "change_window"; data = "63"; },
+  { key = "meta-F"; id = "change_window"; data = "64"; },
+  { key = "meta-G"; id = "change_window"; data = "65"; },
+  { key = "meta-H"; id = "change_window"; data = "66"; },
+  { key = "meta-J"; id = "change_window"; data = "67"; },
+  { key = "meta-K"; id = "change_window"; data = "68"; },
+  { key = "meta-L"; id = "change_window"; data = "69"; },
+  { key = "meta-:"; id = "change_window"; data = "70"; },
+  { key = "meta-Z"; id = "change_window"; data = "71"; },
+  { key = "meta-X"; id = "change_window"; data = "72"; },
+  { key = "meta-C"; id = "change_window"; data = "73"; },
+  { key = "meta-V"; id = "change_window"; data = "74"; },
+  { key = "meta-B"; id = "change_window"; data = "75"; },
+  { key = "meta-N"; id = "change_window"; data = "76"; },
+  { key = "meta-M"; id = "change_window"; data = "77"; },
+  { key = "meta-<"; id = "change_window"; data = "78"; },
+  { key = "meta->"; id = "change_window"; data = "79"; }
+);
+
 windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#csgo";
-        tag = "synirc";
-      }
-    );
+  1 = {
+    immortal = "yes";
+    name = "(status)";
+    level = "ALL";
+    sticky = "yes";
   };
-  3 = {
+  2 = {
     items = (
       {
         type = "CHANNEL";
@@ -161,19 +268,10 @@ windows = {
         tag = "synirc";
       }
     );
+    sticky = "yes";
+    parent = "1";
   };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#jenkem";
-        tag = "linuxniche";
-      }
-    );
-  };
-  5 = { name = "hilight"; sticky = "yes"; };
-  6 = {
+  3 = {
     items = (
       {
         type = "CHANNEL";
@@ -182,8 +280,10 @@ windows = {
         tag = "bitlbee";
       }
     );
+    sticky = "yes";
+    parent = "1";
   };
-  7 = {
+  4 = {
     items = (
       {
         type = "CHANNEL";
@@ -192,23 +292,121 @@ windows = {
         tag = "synirc";
       }
     );
+    sticky = "yes";
+    parent = "1";
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&gtalk";
+        tag = "bitlbee";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&fb";
+        tag = "bitlbee";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&aim";
+        tag = "bitlbee";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
   };
   8 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#goonzb";
+        name = "#cobol";
         tag = "synirc";
       }
     );
+    sticky = "yes";
+    parent = "1";
+  };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#nhl";
+        tag = "synirc";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  10 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#pokegoons";
+        tag = "synirc";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  11 = { name = "hilight"; sticky = "yes"; };
+  12 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#csgo";
+        tag = "synirc";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  13 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "MikeBurleson_";
+        tag = "bitlbee";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  14 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#jenkem";
+        tag = "linuxniche";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
   };
 };
+
 mainwindows = {
-  7 = { first_line = "7"; lines = "66"; };
-  5 = { first_line = "1"; lines = "6"; };
+  1 = { first_line = "7"; lines = "51"; };
+  11 = { first_line = "1"; lines = "6"; };
 };
-ignores = (
-  { level = "ALL"; channels = ( "&fb", "&aim", "&gtalk" ); },
-  { level = "JOINS PARTS"; channels = ( "#csgo" ); }
-);
