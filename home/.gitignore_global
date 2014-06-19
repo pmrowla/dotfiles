@@ -1,6 +1,8 @@
 # Global git ignores
 ####################
 
+.clang_complete
+
 # Binary packages
 #################
 *.7z
