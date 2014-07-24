@@ -194,6 +194,8 @@ map <F3>    :cnext<CR>
 map <F4>    :cc<CR>
 map <F5>    :cprev<CR>
 
+map <F8>    :TagbarToggle<CR>
+
 noremap <S-Insert>  <MiddleMouse>
 noremap! <S-Insert> <MiddleMouse>
 

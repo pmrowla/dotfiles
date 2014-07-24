@@ -14,8 +14,10 @@ Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jalcine/cmake.vim'
+Bundle 'jnwhiteh/vim-golang'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -40,7 +42,6 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'withgod/vim-sourcepawn'
 
 " vim-scripts bundles
-Bundle 'taglist.vim'
 
 filetype plugin indent on   " required!
 
