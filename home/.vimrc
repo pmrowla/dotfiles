@@ -38,6 +38,8 @@ set cmdheight=2
 set complete-=i     " don't search includes
 set display=lastline
 
+set backupskip=/tmp/*,/private/tmp/*
+
 if &encoding ==# 'latin1' && has('gui_running')
     set encoding=utf-8
 endif

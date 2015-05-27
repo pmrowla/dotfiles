@@ -144,3 +144,7 @@ fi
 if [ -f $HOME/.bashrc.local ]; then
     . $HOME/.bashrc.local
 fi
+
+if [ -f "/opt/boxen/homebrew/bin/vim" ]; then
+    export EDITOR=/opt/boxen/homebrew/bin/vim
+fi
