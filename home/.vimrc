@@ -96,6 +96,8 @@ let g:gist_show_privates = 1
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_c_config_file = '.clang_complete'
+let g:syntastic_cpp_config_file = '.clang_complete'
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2

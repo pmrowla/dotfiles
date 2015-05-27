@@ -252,12 +252,14 @@ keyboard = (
   { key = "meta->"; id = "change_window"; data = "79"; }
 );
 
+
 windows = {
   1 = {
     immortal = "yes";
     name = "(status)";
     level = "ALL";
     sticky = "yes";
+    parent = "8";
   };
   2 = {
     items = (
@@ -269,7 +271,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   3 = {
     items = (
@@ -281,7 +283,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   4 = {
     items = (
@@ -293,7 +295,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   5 = {
     items = (
@@ -305,7 +307,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   6 = {
     items = (
@@ -317,7 +319,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   7 = {
     items = (
@@ -329,7 +331,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   8 = {
     items = (
@@ -341,7 +343,6 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
   };
   9 = {
     items = (
@@ -353,7 +354,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   10 = {
     items = (
@@ -365,7 +366,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   11 = { name = "hilight"; sticky = "yes"; };
   12 = {
@@ -378,7 +379,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   13 = {
     items = (
@@ -390,23 +391,20 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "8";
   };
   14 = {
     items = (
       {
-        type = "CHANNEL";
+        type = "QUERY";
         chat_type = "IRC";
-        name = "#jenkem";
-        tag = "linuxniche";
+        name = "JomanChu";
+        tag = "bitlbee";
       }
     );
-    sticky = "yes";
-    parent = "1";
   };
 };
-
 mainwindows = {
-  1 = { first_line = "7"; lines = "51"; };
+  8 = { first_line = "7"; lines = "51"; };
   11 = { first_line = "1"; lines = "6"; };
 };
