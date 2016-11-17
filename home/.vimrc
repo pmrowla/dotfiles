@@ -124,6 +124,8 @@ endfunction
 
 let g:c_syntax_for_h="true"     " c++ is dumb
 
+let g:filetype_inc="sourcepawn"
+
 " autocmds
 if has("autocmd") && !exists("autocmds_loaded")
     " do this once
@@ -136,8 +138,9 @@ if has("autocmd") && !exists("autocmds_loaded")
     autocmd FileType h set ft=cpp.doxygen
     autocmd BufNewFile,BufRead *.dxy setf doxygen
     autocmd BufNewFile,BufRead *.sls setf yaml
+    autocmd BufNewFile,BufRead *.html setf htmljinja
     autocmd FileType yaml,json set ts=2 sts=2 sw=2
-    autocmd FileType html,django,htmldjango,jinja,htmljinja set ts=2 sts=2 sw=2 tw=0 wrap lbr
+    autocmd FileType javascript,html,django,htmldjango,jinja,htmljinja set ts=2 sts=2 sw=2 tw=0 wrap lbr
 
     " run flake8 on writes to a Python file
     autocmd BufWritePost *.py call Flake8()
@@ -152,7 +155,7 @@ if has("autocmd") && !exists("autocmds_loaded")
     "au InsertLeave * set relativenumber
 
     " use wrap + linebreak for text based document types
-    autocmd FileType latex,markdown set tw=0 wrap lbr
+    autocmd FileType latex,markdown,rst set tw=0 wrap lbr
 endif
 
 " Section: Commands {{{1
