@@ -1,7 +1,9 @@
-# Prefer Korean over en_US
+# Use ko_KR except for messages
+unset LC_ALL
 export LANG=ko_KR.UTF-8
-export LANGUAGE=ko_KR.UTF-8
-export LC_ALL=ko_KR.UTF-8
+export LC_CTYPE=ko_KR.UTF-8
+export LC_MESSAGES=en_US.UTF-8
+export LC_RESPONSE=en_US.UTF-8
 
 export EDITOR=vim
 
@@ -66,6 +68,10 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     antigen bundle brew
     antigen bundle brew-cask
     antigen bundle osx
+else
+    # zsh-completions is bundled with homebrew zsh by default, but we want it
+    # on all other OS's
+    antigen bundle zsh-users/zsh-completions
 fi
 
 # theme
