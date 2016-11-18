@@ -9,8 +9,12 @@
 #umask 022
 
 export TZ="Asia/Seoul"
-export LC_ALL=ko_KR.UTF-8
-export LANG=ko_KR.UTF-8
+
+unset LC_ALL
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_COLLATE=ko_KR.UTF-8
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

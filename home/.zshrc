@@ -1,9 +1,8 @@
-# Use ko_KR except for messages
 unset LC_ALL
-export LANG=ko_KR.UTF-8
-export LC_CTYPE=ko_KR.UTF-8
-export LC_MESSAGES=en_US.UTF-8
-export LC_RESPONSE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_COLLATE=ko_KR.UTF-8
 
 export EDITOR=vim
 
@@ -20,10 +19,10 @@ if [[ -d /opt/boxen/homebrew ]]; then
     export PATH=/opt/boxen/homebrew/sbin:/opt/boxen/homebrew/bin:$PATH
 fi
 
-if [[ -f ~/.dircolors ]]; then
-    if [[ (( $+commands[gdircolors] )) ]]; then
+if [[ -f ~/.dircolors ]] then
+    if (( $+commands[gdircolors] )); then
         eval "$(gdircolors -b ~/.dircolors)" || eval "$(gdircolors -b)"
-    elif [[ (( $+commands[dircolors] )) ]]; then
+    elif (( $+commands[dircolors] )); then
         eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     fi
 fi
