@@ -18,6 +18,14 @@ if [[ -d /opt/boxen/homebrew ]]; then
     export PATH=/opt/boxen/homebrew/sbin:/opt/boxen/homebrew/bin:$PATH
 fi
 
+if [[ -f ~/.dircolors ]]; then
+    if [[ (( $+commands[gdircolors] )) ]]; then
+        eval "$(gdircolors -b ~/.dircolors)" || eval "$(gdircolors -b)"
+    elif [[ (( $+commands[dircolors] )) ]]; then
+        eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    fi
+fi
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -54,7 +62,7 @@ antigen bundle rbenv
 antigen bundle ruby
 
 # OS specific plugins
-if [[ $CURRENT_OS == 'OS X' ]]; then
+if [[ $OSTYPE == 'darwin'* ]]; then
     antigen bundle brew
     antigen bundle brew-cask
     antigen bundle osx
