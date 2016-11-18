@@ -6,7 +6,7 @@ irssi_notifier() {
             url=`echo \"$message\" | grep -Eo 'https?://[^ >]+' | head -1`;
 
             if [ ! "$url" ]; then
-                /opt/boxen/homebrew/bin/terminal-notifier -title "\"$heading\"" -message "\"$message\"" -activate com.apple.Terminal;
+                /opt/boxen/homebrew/bin/terminal-notifier -title "\"$heading\"" -message "\"$message\"" -activate com.google.iterm2;
             else
                 /opt/boxen/homebrew/bin/terminal-notifier -title "\"$heading\"" -message "\"$message\"" -open "\"$url\"";
             fi;
