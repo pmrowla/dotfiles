@@ -81,7 +81,6 @@ set shiftwidth=4
 
 " Plugin Settings {{{2
 
-let g:flake8_builtins="_,apply"
 let g:netrw_list_hide = '^\.,^tags$,.*\.pyc$'
 let g:python_highlight_all=1    " best settings for python.vim
 
@@ -98,6 +97,8 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_c_config_file = '.clang_complete'
 let g:syntastic_cpp_config_file = '.clang_complete'
+let g:syntastic_python_flake8_exec = 'python'
+let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
