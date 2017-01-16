@@ -74,6 +74,6 @@ else
 fi
 
 # theme
-antigen bundle therealklanni/purity
+antigen bundle pmrowla/purity
 
 antigen apply
