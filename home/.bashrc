@@ -148,3 +148,6 @@ fi
 if [ -f "/opt/boxen/homebrew/bin/vim" ]; then
     export EDITOR=/opt/boxen/homebrew/bin/vim
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

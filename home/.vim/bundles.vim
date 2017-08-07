@@ -9,10 +9,11 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
+Bundle 'VundleVim/Vundle.vim'
+
 " github bundles
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'jalcine/cmake.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'

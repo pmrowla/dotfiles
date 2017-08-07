@@ -67,6 +67,8 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     antigen bundle brew
     antigen bundle brew-cask
     antigen bundle osx
+
+    export VIRTUALENVWRAPPER_PYTHON="$(brew --prefix)/bin/python2"
 else
     # zsh-completions is bundled with homebrew zsh by default, but we want it
     # on all other OS's
@@ -77,3 +79,6 @@ fi
 antigen bundle pmrowla/purity
 
 antigen apply
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
