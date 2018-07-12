@@ -45,6 +45,7 @@ if &encoding ==# 'latin1' && has('gui_running')
 endif
 
 set fileformats=unix,dos,mac
+set fileencodings=ucs-bom,utf-8,latin1,cp932,euc-jp,default
 
 " c: auto-wrap comments
 " q: rewrap comments w/gq
@@ -142,7 +143,7 @@ if has("autocmd") && !exists("autocmds_loaded")
     autocmd BufNewFile,BufRead *.dxy setf doxygen
     autocmd BufNewFile,BufRead *.sls setf yaml
     autocmd BufNewFile,BufRead *.html setf htmljinja
-    autocmd FileType yaml,json set ts=2 sts=2 sw=2
+    autocmd FileType yaml,json,toml set ts=2 sts=2 sw=2
     autocmd FileType javascript,html,django,htmldjango,jinja,htmljinja set ts=2 sts=2 sw=2 tw=0 wrap lbr
 
     " run flake8 on writes to a Python file
@@ -159,6 +160,10 @@ if has("autocmd") && !exists("autocmds_loaded")
 
     " use wrap + linebreak for text based document types
     autocmd FileType latex,markdown,rst set tw=0 wrap lbr
+
+    " assume kirikiri scripts are windows+jp only
+    autocmd FileType kirikiri set tw=56 " max adv line length
+    autocmd BufNewFile,BufRead *.ks set filetype=kirikiri
 endif
 
 " Section: Commands {{{1
@@ -212,6 +217,17 @@ map <Leader>re :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>rt :tabnew <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>rv :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>rs :sp <C-R>=expand("%:p:h") . "/" <CR>
+
+" encoding
+nmap <silent> eu :set fenc=utf-8<CR>
+nmap <silent> ee :set fenc=euc-jp<CR>
+nmap <silent> es :set fenc=cp932<CR>
+
+" encode reopen encoding
+nmap <silent> eru :e ++enc=utf-8 %<CR>
+nmap <silent> ere :e ++enc=euc-jp %<CR>
+nmap <silent> ers :e ++enc=cp932 %<CR>
+nmap <silent> erw :e ++enc=utf-16le %<CR>
 
 " }}}1
 "
