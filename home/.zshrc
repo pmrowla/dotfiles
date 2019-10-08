@@ -68,7 +68,7 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     antigen bundle brew-cask
     antigen bundle osx
 
-    export VIRTUALENVWRAPPER_PYTHON="$(brew --prefix)/opt/python@2/bin/python2.7"
+    export VIRTUALENVWRAPPER_PYTHON="$(brew --prefix)/opt/python/libexec/bin/python"
 else
     # zsh-completions is bundled with homebrew zsh by default, but we want it
     # on all other OS's

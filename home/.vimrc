@@ -45,7 +45,7 @@ if &encoding ==# 'latin1' && has('gui_running')
 endif
 
 set fileformats=unix,dos,mac
-set fileencodings=ucs-bom,utf-8,latin1,cp932,euc-jp,default
+set fileencodings=ucs-bom,utf-8,cp932,euc-jp,latin1,default
 
 " c: auto-wrap comments
 " q: rewrap comments w/gq
