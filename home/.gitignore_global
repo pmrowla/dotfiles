@@ -2,6 +2,7 @@
 ####################
 
 .clang_complete
+tags
 
 # Binary packages
 #################
@@ -35,3 +36,6 @@ Thumbs.db
 ############
 *~
 *.swp
+
+# cloud syncing extras
+*.icloud
