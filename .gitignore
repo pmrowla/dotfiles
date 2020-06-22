@@ -1,2 +1,7 @@
-doc/tags
-.netrwhist
+home/.byobu/
+home/.irssi/away.log
+home/.irssi/config
+home/.irssi/fnotify
+home/.ssh/
+home/.vim/bundle/
+home/.vim/.netrwhist

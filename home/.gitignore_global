@@ -1,0 +1,41 @@
+# Global git ignores
+####################
+
+.clang_complete
+tags
+
+# Binary packages
+#################
+*.7z
+*.bz2
+*.dmg
+*.egg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+####################
+*.sqlite
+
+# OS generated files
+####################
+.DS_Store
+.DS_Stores?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Temp files
+############
+*~
+*.swp
+
+# cloud syncing extras
+*.icloud
