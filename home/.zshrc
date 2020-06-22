@@ -27,6 +27,11 @@ if [[ -f ~/.dircolors ]] then
     fi
 fi
 
+# use homebrew zsh-completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -41,7 +46,11 @@ compinit
 # End of lines added by compinstall
 
 # use antigen for package management
-source ~/.zsh-antigen/antigen.zsh
+if [[ -f ~/.zsh-antigen/antigen.zsh ]]; then
+    source ~/.zsh-antigen/antigen.zsh
+elif [[ -f /usr/local/share/antigen/antigen.zsh ]]; then
+    source /usr/local/share/antigen/antigen.zsh
+fi
 
 antigen use oh-my-zsh
 
@@ -69,6 +78,10 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     antigen bundle osx
 
     export VIRTUALENVWRAPPER_PYTHON="$(brew --prefix)/opt/python/libexec/bin/python"
+
+    # catalina and later don't allow the creation of /usr/include, set CPATH so
+    # certain compilers can still find system headers
+    export CPATH=`xcrun --show-sdk-path`/usr/include
 else
     # zsh-completions is bundled with homebrew zsh by default, but we want it
     # on all other OS's
@@ -82,3 +95,6 @@ antigen apply
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# added by travis gem
+[ -f /Users/pmrowla/.travis/travis.sh ] && source /Users/pmrowla/.travis/travis.sh
