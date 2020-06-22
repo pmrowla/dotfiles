@@ -40,9 +40,7 @@ set display=lastline
 
 set backupskip=/tmp/*,/private/tmp/*
 
-if &encoding ==# 'latin1' && has('gui_running')
-    set encoding=utf-8
-endif
+set encoding=utf-8
 
 set fileformats=unix,dos,mac
 set fileencodings=ucs-bom,utf-8,cp932,euc-jp,latin1,default
@@ -85,6 +83,8 @@ set shiftwidth=4
 let g:netrw_list_hide = '^\.,^tags$,.*\.pyc$'
 let g:python_highlight_all=1    " best settings for python.vim
 
+" let g:airline_theme='solarized'
+
 let g:ctrlp_user_command = {
     \ 'types': {
     \   1: ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'],
@@ -94,12 +94,12 @@ let g:ctrlp_user_command = {
 let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
 
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_c_config_file = '.clang_complete'
-let g:syntastic_cpp_config_file = '.clang_complete'
-let g:syntastic_python_flake8_exec = 'python'
-let g:syntastic_python_flake8_args = ['-m', 'flake8']
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_c_config_file = '.clang_complete'
+" let g:syntastic_cpp_config_file = '.clang_complete'
+" let g:syntastic_python_flake8_exec = 'python'
+" let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
