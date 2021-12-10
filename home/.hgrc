@@ -1,7 +1,0 @@
-[ui]
-username = Peter Rowlands <peter@pmrowla.com>
-editor = vim
-
-[extensions]
-hgext.bookmarks =
-hggit =
