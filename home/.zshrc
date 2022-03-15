@@ -6,17 +6,21 @@ export LC_COLLATE=ko_KR.UTF-8
 
 export EDITOR=vim
 
+# use homebrew zsh-completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
 
-if [[ -d ~/bin ]]; then
-    export PATH=~/bin:$PATH
+if [[ -d /usr/local/sbin ]]; then
+    export PATH=/usr/local/sbin:$PATH
 fi
 
-# brew is probably installed via boxen rather than into /usr/local
-if [[ -d /opt/boxen/homebrew ]]; then
-    export PATH=/opt/boxen/homebrew/sbin:/opt/boxen/homebrew/bin:$PATH
+if [[ -d ~/bin ]]; then
+    export PATH=~/bin:$PATH
 fi
 
 if [[ -f ~/.dircolors ]] then
@@ -25,11 +29,6 @@ if [[ -f ~/.dircolors ]] then
     elif (( $+commands[dircolors] )); then
         eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     fi
-fi
-
-# use homebrew zsh-completion
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
 # Lines configured by zsh-newuser-install
@@ -71,11 +70,14 @@ antigen bundle gem
 antigen bundle rbenv
 antigen bundle ruby
 
+# gpg
+antigen bundle gpg-agent
+
 # OS specific plugins
 if [[ $OSTYPE == 'darwin'* ]]; then
     antigen bundle brew
     antigen bundle brew-cask
-    antigen bundle osx
+    antigen bundle macos
 
     export VIRTUALENVWRAPPER_PYTHON="$(brew --prefix)/opt/python/libexec/bin/python"
 
@@ -95,6 +97,8 @@ antigen apply
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export LESS="-R"
 
 # added by travis gem
 [ -f /Users/pmrowla/.travis/travis.sh ] && source /Users/pmrowla/.travis/travis.sh

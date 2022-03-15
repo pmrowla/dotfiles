@@ -100,6 +100,7 @@ let g:gist_show_privates = 1
 " let g:syntastic_cpp_config_file = '.clang_complete'
 " let g:syntastic_python_flake8_exec = 'python'
 " let g:syntastic_python_flake8_args = ['-m', 'flake8']
+let g:ycm_extra_conf_globlist = ['~/git/*', '!~/*']
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
@@ -147,7 +148,7 @@ if has("autocmd") && !exists("autocmds_loaded")
     autocmd FileType javascript,html,django,htmldjango,jinja,htmljinja set ts=2 sts=2 sw=2 tw=0 wrap lbr
 
     " run flake8 on writes to a Python file
-    autocmd BufWritePost *.py call Flake8()
+    autocmd BufWritePost *.py call flake8#Flake8()
 
     "autocmd FileType svn-base set ft=svnbase
 

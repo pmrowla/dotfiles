@@ -86,6 +86,19 @@ if [ -x /usr/bin/dircolors ]; then
     #alias vdir='vdir --color=auto'
 fi
 
+# homebrew stuff
+if command -v brew &> /dev/null; then
+    echo "brew"
+    if [ -x "$(brew --prefix)/bin/gdircolors" ]; then
+        test -r ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+        alias ls='gls --color=auto'
+    fi
+
+    if [ -f "$(brew --prefix)/etc/bash_completion" ] && ! shopt -oq posix; then
+        . "$(brew --prefix)/etc/bash_completion"
+    fi
+fi
+
 # always use colored grep if we can
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -112,18 +125,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# if boxen exists use it
-if [ -f /opt/boxen/env.sh ]; then
-    . /opt/boxen/env.sh
-
-    # mac specific dircolors crap
-    if [ -x /opt/boxen/homebrew/bin/gdircolors ]; then
-        test -r ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-        alias ls='gls --color=auto'
-    fi
-
-fi
-
 # if we have virtualenvwrapper then enable it
 which virtualenvwrapper.sh &> /dev/null
 if [ $? -eq 0 ]; then
@@ -143,10 +144,6 @@ fi
 
 if [ -f $HOME/.bashrc.local ]; then
     . $HOME/.bashrc.local
-fi
-
-if [ -f "/opt/boxen/homebrew/bin/vim" ]; then
-    export EDITOR=/opt/boxen/homebrew/bin/vim
 fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

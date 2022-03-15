@@ -24,7 +24,8 @@
 [github]
 	user = pmrowla
 [init]
-	templatedir = ~/.git_template
+	defaultBranch = main
+    templatedir = ~/.git_template
 [interactive]
 	singlekey = true
 [merge]
