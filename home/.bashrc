@@ -151,3 +151,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # added by travis gem
 [ -f /Users/pmrowla/.travis/travis.sh ] && source /Users/pmrowla/.travis/travis.sh
+. "$HOME/.cargo/env"

@@ -148,7 +148,7 @@ if has("autocmd") && !exists("autocmds_loaded")
     autocmd FileType javascript,html,django,htmldjango,jinja,htmljinja set ts=2 sts=2 sw=2 tw=0 wrap lbr
 
     " run flake8 on writes to a Python file
-    autocmd BufWritePost *.py call flake8#Flake8()
+    " autocmd BufWritePost *.py call flake8#Flake8()
 
     "autocmd FileType svn-base set ft=svnbase
 
