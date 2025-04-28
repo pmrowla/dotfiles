@@ -187,6 +187,8 @@ endif   " has("eval")
 " Section: Mappings {{{1
 " ----------------------
 
+let mapleader=","
+
 " fix numpad in some terminals
 map <C-[>Op 0
 map <C-[>Oq 1
@@ -215,7 +217,7 @@ noremap! <S-Insert> <MiddleMouse>
 
 " open files with path relative to current buffer
 map <Leader>re :e <C-R>=expand("%:p:h") . "/" <CR>
-map <Leader>rt :tabnew <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>rt :tabnew <C-R>=expand("%:p:h") . "/" <CRj
 map <Leader>rv :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>rs :sp <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -229,6 +231,12 @@ nmap <silent> eru :e ++enc=utf-8 %<CR>
 nmap <silent> ere :e ++enc=euc-jp %<CR>
 nmap <silent> ers :e ++enc=cp932 %<CR>
 nmap <silent> erw :e ++enc=utf-16le %<CR>
+
+" YCM mapping
+" noremap <Leader>gc :YcmCompleter GoToDeclaration<CR>
+" noremap <Leader>gf :YcmCompleter GoToDefinition<CR>
+noremap <Leader>gd :YcmCompleter GoTo<CR>
+noremap <Leader>gs :vsplit<CR>YcmCompleter GoTo<CR>
 
 " }}}1
 "
